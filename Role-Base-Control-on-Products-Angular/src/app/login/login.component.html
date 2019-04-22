@@ -1,0 +1,26 @@
+<body>
+  <div class="wrapper">
+    <form class="form-signin" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <table>
+
+        <div class="form-group">
+          <td>Mobile Number</td>
+          <td>
+            <input type="text" formControlName="mobile" id="mobile" placeholder="Mobile Number" required=""
+              autofocus="" />
+          </td>
+        </div>
+
+        <div class="form-group">
+          <td>Password</td>
+          <td>
+            <input type="password" formControlName="password" id="pwd" placeholder="Password" required="" />
+          </td>
+        </div>
+
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
+        <a routerLink="/register"> New User? </a>
+      </table>
+    </form>
+  </div>
+</body>

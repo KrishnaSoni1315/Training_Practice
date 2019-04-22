@@ -1,0 +1,87 @@
+<body>
+  <div class="wrapper">
+    <form class="form-signin" [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+      <table>
+
+        <div class="form-group">
+          <td>Male</td>
+          <td>
+            <input type="radio" value="Male" name="gender" class="form-control" formControlName="gender" id="gender">
+          </td>
+          <td>Female</td>
+          <td>
+            <input type="radio" value="Female" name="gender" class="form-control" formControlName="gender" id="gender">
+          </td>
+          <div *ngIf="submitted && registerForm.controls.gender.errors" class="error">
+            <div *ngIf="registerForm.controls.gender.errors.required">Gender is required</div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <td>First Name</td>
+          <td>
+            <input type="text" class="form-control" formControlName="fname" id="fname" placeholder="Your First Name"
+              required="" autofocus="" />
+          </td>
+          <div *ngIf="submitted && registerForm.controls.fname.errors" class="error">
+            <div *ngIf="registerForm.controls.fname.errors.required">First Name is required</div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <td>Last Name</td>
+          <td><input type="text" class="form-control" formControlName="lname" id="lname" placeholder="Your Last Name"
+              required="" autofocus="" /></td>
+          <div *ngIf="submitted && registerForm.controls.lname.errors" class="error">
+            <div *ngIf="registerForm.controls.lname.errors.required">Last Name is required</div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <td>Address</td>
+          <td><input type="text" class="form-control" formControlName="address" id="address" placeholder="Your Address"
+              required="" autofocus="" /></td>
+          <div *ngIf="submitted && registerForm.controls.address.errors" class="error">
+            <div *ngIf="registerForm.controls.address.errors.required">Address is required</div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <td>City</td>
+          <td><input type="text" class="form-control" formControlName="city" id="city" placeholder="Your City"
+              required="" autofocus="" /></td>
+          <div *ngIf="submitted && registerForm.controls.city.errors" class="error">
+            <div *ngIf="registerForm.controls.city.errors.required">City-Name is required</div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <td>Mobile Number</td>
+          <td><input type="text" class="form-control" formControlName="mobile" id="mobile"
+              placeholder="Your Mobile Number" required="" autofocus="" /></td>
+          <div *ngIf="submitted && registerForm.controls.mobile.errors" class="error">
+            <div *ngIf="registerForm.controls.mobile.errors.required">Mobile Number is required</div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <td>Password</td>
+          <td> <input type="password" class="form-control" formControlName="password" id="pwd" placeholder="Password"
+              required="" /></td>
+          <div *ngIf="submitted && registerForm.controls.password.errors" class="error">
+            <div *ngIf="registerForm.controls.password.errors.required">Password is required</div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <select class="form-control" formControlName="role" id="role" hidden>
+            <option value="user" selected>user</option>
+          </select>
+        </div>
+
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Register</button>
+        <a routerLink="/login"> Already Have an Account? </a>
+      </table>
+    </form>
+  </div>
+</body>
